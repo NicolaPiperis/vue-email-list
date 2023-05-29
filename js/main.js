@@ -9,59 +9,17 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
-            email : "",
-            email1 : "",
-            email2:"",
-            email3 :"",
-            email4:"",
-            email5:"",
-            email6:"",
-            email7:"",
-            email8:"",
-            email9:""
+            emailList : []
         }
     },
     mounted() {
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email1 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email2 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email3 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email4 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email5 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email6 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email7 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email8 = response.data.response)),
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => 
-                (this.email9 = response.data.response))
-        
+
+        for (let i = 0 ; i <= 9 ; i++) {
+            
+            axios
+                .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then(response => 
+                    this.emailList.push(response.data.response))    
+        }
     }
 }).mount('#app');
