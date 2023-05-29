@@ -3,3 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: black;
+    color: white;
+}
+
+ul{
+    text-align: center;
+    font-size: 22px;
+    line-height: 150%;
+}
